@@ -10,6 +10,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.nbgc.csdnnews.R;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
@@ -36,8 +37,8 @@ public class NewsItemAdapter extends BaseAdapter
 		mInflater = LayoutInflater.from(context);
 		imageLoader = ImageLoader.getInstance();
 		imageLoader.init(ImageLoaderConfiguration.createDefault(context));
-		options = new DisplayImageOptions.Builder().showStubImage(com.nbgc.csdnnews.R.drawable.images)
-				.showImageForEmptyUri(com.nbgc.csdnnews.R.drawable.images).showImageOnFail(com.nbgc.csdnnews.R.drawable.images).cacheInMemory()
+		options = new DisplayImageOptions.Builder().showStubImage(R.drawable.ic_launcher)
+				.showImageForEmptyUri(R.drawable.ic_launcher).showImageOnFail(R.drawable.ic_launcher).cacheInMemory()
 				.cacheOnDisc().displayer(new RoundedBitmapDisplayer(20)).displayer(new FadeInBitmapDisplayer(300))
 				.build();
 
