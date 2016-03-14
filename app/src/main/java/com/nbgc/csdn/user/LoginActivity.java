@@ -95,9 +95,10 @@ public class LoginActivity extends BaseActivity {
                     public void run() {
                         dialog.cancel();
                         ToastUtil.toast(getApplicationContext(), "" + strResult);
-                        if("success".equals(strResult)){
+                        if ("success".equals(strResult)) {
                             finish();//调到主界面
-                        }else{
+                            UserUtil.setUser(getApplicationContext(), "" + editUsername.getText(), "" + editPassword.getText());
+                        } else {
                             //登录失败重新登陆
                         }
                     }

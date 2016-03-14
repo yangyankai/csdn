@@ -62,7 +62,6 @@ public class ReginActivity extends Activity {
         dialog = new ProgressDialog(this);
         dialog.setMessage("正在注册...");
         dialog.setCancelable(true);
-        btnRegin.setText("");
     }
 
     public class HttpThread implements Runnable {
