@@ -110,6 +110,8 @@
             android:exported="true"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
+        <activity android:name="com.nbgc.csdn.user.LoginActivity"/>
+        <activity android:name="com.nbgc.csdn.user.ReginActivity"/>
         <!-- 测试 -->
         <activity android:name="cn.sharesdk.share.demo.MainActivity" />
     </application>
