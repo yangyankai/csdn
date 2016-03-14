@@ -1,15 +1,14 @@
 package com.nbgc.csdn.user;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
+import android.widget.EditText;
 
-import com.nbgc.csdn.BaseActivity;
+import com.nbgc.csdn.util.ToastUtil;
 import com.nbgc.csdnnews.R;
 
 import org.apache.http.HttpResponse;
@@ -24,126 +23,83 @@ import org.apache.http.util.EntityUtils;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ReginActivity extends BaseActivity {
+public class ReginActivity extends Activity {
 
-    private Button btnDown;
-
-    private TextView textViewUsername;
-    private TextView textViewPassword;
-    private TextView textViewEmail;
+    private Button btnRegin;//登录
+    private EditText editUsername;//用户名
+    private EditText editPassword;//密码
+    private EditText editEmail;//电子邮件
 
     private static String uriAPI;
-
     private ProgressDialog dialog;
     private String strResult;
-    // 一个静态的Handler，Handler建议声明为静态的
     private static Handler handler = new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_regin);
-        btnDown = (Button) findViewById(R.id.btnDown);
 
-        textViewUsername = (TextView) findViewById(R.id.username);
-        textViewPassword = (TextView) findViewById(R.id.password);
-        textViewEmail = (TextView) findViewById(R.id.email);
+        initView();
+        setClick();
+    }
 
-        dialog = new ProgressDialog(this);
-        //  dialog.setTitle("提示");
-        dialog.setMessage("正在登录...");
-        dialog.setCancelable(true);
-
-        btnDown.setOnClickListener(new View.OnClickListener() {
+    private void setClick() {
+        btnRegin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // 开启一个子线程，用于下载 网页 xml
-                new Thread(new MyThread()).start();
-                // 显示对话框
+                new Thread(new HttpThread()).start();
                 dialog.show();
             }
         });
     }
 
-    public class MyThread implements Runnable {
+    private void initView() {
+        btnRegin = (Button) findViewById(R.id.btn_regin);
+        editUsername = (EditText) findViewById(R.id.username);
+        editPassword = (EditText) findViewById(R.id.password);
+        editEmail = (EditText) findViewById(R.id.email);
+        dialog = new ProgressDialog(this);
+        dialog.setMessage("正在注册...");
+        dialog.setCancelable(true);
+        btnRegin.setText("");
+    }
+
+    public class HttpThread implements Runnable {
 
         @Override
         public void run() {
-            // 下载xml
             try {
-
                 uriAPI = "http://114.215.101.143:8080/NBTUNews/AddUser";
                 HttpPost httpRequest = new HttpPost(uriAPI);
                 List<NameValuePair> params = new ArrayList<NameValuePair>();
-
-                params.add(new BasicNameValuePair("username", "" + textViewUsername.getText()));
-                params.add(new BasicNameValuePair("password", "" + textViewPassword.getText()));
-                params.add(new BasicNameValuePair("email", "" + textViewEmail.getText()));
-
+                params.add(new BasicNameValuePair("username", "" + editUsername.getText()));
+                params.add(new BasicNameValuePair("password", "" + editPassword.getText()));
+                params.add(new BasicNameValuePair("email", "" + editEmail.getText()));
                 httpRequest.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
-                HttpResponse httpResponse = new DefaultHttpClient()
-                        .execute(httpRequest);
+                HttpResponse httpResponse = new DefaultHttpClient().execute(httpRequest);
 
                 if (httpResponse.getStatusLine().getStatusCode() == 200) {
-
-                    strResult = EntityUtils.toString(httpResponse
-                            .getEntity());
-                    // textViewUsername.setText(strResult);
+                    strResult = EntityUtils.toString(httpResponse.getEntity());
                 } else {
-                    // textViewUsername.setText("Error Response: "+httpResponse.getStatusLine().toString());
+                    return;
                 }
-
-                /*catch (ClientProtocolException e) {
-                    textViewUsername.setText(e.getMessage().toString());
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    textViewUsername.setText(e.getMessage().toString());
-                    e.printStackTrace();
-                } catch (Exception e) {
-                    textViewUsername.setText(e.getMessage().toString());
-                    e.printStackTrace();
-                }*/
-
-
                 handler.post(new Runnable() {
                     @Override
                     public void run() {
-                        // 在Post中操作UI组件mTextView
-                        btnDown.setText("nihao");
-                        textViewUsername.setText(strResult);
                         dialog.cancel();
+                        ToastUtil.toast(getApplicationContext(), "" + strResult);
+                        if("success".equals(strResult)){
+                            finish();//调到登录界面
+                        }else{
+                            //登录失败重新登陆
+                        }
                     }
                 });
-                // 隐藏对话框
-                //         dialog.dismiss();
-
             } catch (Exception e) {
                 e.printStackTrace();
             }
 
         }
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 }
