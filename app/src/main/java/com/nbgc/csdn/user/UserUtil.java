@@ -11,7 +11,7 @@ public class UserUtil {
         SharedPreferences sharedPreferences = context.getSharedPreferences("userinformation", context.MODE_PRIVATE);
         String username = sharedPreferences.getString("username", "");
         String password = sharedPreferences.getString("password", "");
-        if (username == "" || password == "") {
+        if (username == "" || password == ""||"".equals(username)||"".equals(password) ) {
             return false;
         } else {
             return true;
@@ -25,4 +25,24 @@ public class UserUtil {
         editor.putString("password", password);
         editor.commit();
     }
+
+    public static void exit(Context context) {
+        SharedPreferences mySharedPreferences= context.getSharedPreferences("userinformation", context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = mySharedPreferences.edit();
+        editor.putString("username","");
+        editor.putString("password","");
+        editor.commit();
+    }
+
+    public static String  getName(Context context) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences("userinformation", context.MODE_PRIVATE);
+        String username = sharedPreferences.getString("username", "");
+        String password = sharedPreferences.getString("password", "");
+        if (username == "" || password == ""||"".equals(username)||"".equals(password) ) {
+            return "无登陆";
+        } else {
+            return ""+username;
+        }
+    }
+
 }

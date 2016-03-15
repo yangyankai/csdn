@@ -79,6 +79,7 @@ public class LoginActivity extends BaseActivity {
         public void run() {
             try {
                 uriAPI = "http://114.215.101.143:8080/NBTUNews/FindUser";
+                uriAPI = "http://114.215.101.143:8080/NBTUNews/FindUser";
                 HttpPost httpRequest = new HttpPost(uriAPI);
                 List<NameValuePair> params = new ArrayList<NameValuePair>();
                 params.add(new BasicNameValuePair("username", "" + editUsername.getText()));
