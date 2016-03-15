@@ -5,7 +5,7 @@ android {
     buildToolsVersion "21.1.2"
 
     defaultConfig {
-        applicationId "com.zhy.csdnnews"
+        applicationId "com.nbgc.csdnnews"
         minSdkVersion 14
         targetSdkVersion 21
         versionCode 1
@@ -53,6 +53,5 @@ dependencies {
     compile project(':xListViewlibrary')
     compile project(':imageloadlibrary')
     compile project(':gestureimageview')
-    //    comlile 'cd'
     compile files('libs/MobTools-2016.0301.1053.jar')
 }
