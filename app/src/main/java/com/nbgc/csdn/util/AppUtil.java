@@ -8,13 +8,12 @@ import android.text.TextUtils;
 
 /**
  * 
- * @author zhy
+ * @author
  * 
  */
 public class AppUtil
 {
 	/**
-	 * �����������ͻ�ȡ�ϴθ��µ�ʱ��
 	 * 
 	 * @param newType
 	 * @return
@@ -24,15 +23,13 @@ public class AppUtil
 		String timeStr = PreferenceUtil.readString(context, "NEWS_" + newType);
 		if (TextUtils.isEmpty(timeStr))
 		{
-			return "�Һñ���������...";
+			return "已经更新.";
 		}
 		return timeStr;
 	}
 	
 	
 	/**
-	 * �����������������ϴθ��µ�ʱ��
-	 * 
 	 * @param newType
 	 * @return
 	 */

@@ -25,9 +25,7 @@ public class NewsItemAdapter extends BaseAdapter
 	private LayoutInflater mInflater;
 	private List<NewsItem> mDatas;
 
-	/**
-	 * ʹ����github��Դ��ImageLoad���������ݼ���
-	 */
+
 	private ImageLoader imageLoader;
 	private DisplayImageOptions options;
 

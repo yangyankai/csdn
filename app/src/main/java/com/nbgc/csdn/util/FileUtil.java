@@ -15,7 +15,6 @@ public class FileUtil
 
 	public static String getFileName(String str)
 	{
-		// ȥ��url�еķ�����Ϊ�ļ�������
 		str = str.replaceAll("(?i)[^a-zA-Z0-9\u4E00-\u9FA5]", "");
 		System.out.println("filename = " + str);
 		return str + ".png";
@@ -85,7 +84,6 @@ public class FileUtil
 		return true;
 	}
 
-	// Bitmapת����byte[]
 	public static byte[] bitmap2Bytes(Bitmap bm)
 	{
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -93,7 +91,6 @@ public class FileUtil
 		return baos.toByteArray();
 	}
 
-	// ��Bitmapת����InputStream
 	public static InputStream bitmap2InputStream(Bitmap bm)
 	{
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();

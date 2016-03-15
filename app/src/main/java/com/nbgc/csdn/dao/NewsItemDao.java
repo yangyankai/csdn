@@ -48,7 +48,6 @@ public class NewsItemDao
 	}
 
 	/**
-	 * ����newsType��currentPage�����ݿ���ȡ����
 	 * 
 	 * @param newsType
 	 * @param currentPage

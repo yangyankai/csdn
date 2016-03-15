@@ -279,7 +279,7 @@ public class Http
 				strResult = EntityUtils.toString(response.getEntity(), HTTP.UTF_8);
 			} else if (response.getStatusLine().getStatusCode() == 302)
 			{
-				strResult = "302"; // cookieʧЧ�������ض����־�������µ�¼��ȡ
+				strResult = "302";
 			} else if (response.getStatusLine().getStatusCode() == 404)
 			{
 				strResult = "-1";

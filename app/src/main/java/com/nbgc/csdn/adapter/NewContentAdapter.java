@@ -105,7 +105,7 @@ public class NewContentAdapter extends BaseAdapter
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent)
 	{
-		News news = mDatas.get(position); // ��ȡ��ǰ������
+		News news = mDatas.get(position);
 
 		Log.e("xxx", news.toString());
 
@@ -162,10 +162,6 @@ public class NewContentAdapter extends BaseAdapter
 				holder.mTextView.setText("\u3000\u3000"+Html.fromHtml(news.getContent()));
 			default:
 
-				// holder.mTextView.setText(Html.fromHtml(item.getContent(),
-				// null, new MyTagHandler()));
-				// holder.content.setText(Html.fromHtml("<ul><bold>�Ӵ�</bold>sdfsdf<ul>",
-				// null, new MyTagHandler()));
 				break;
 			}
 		}

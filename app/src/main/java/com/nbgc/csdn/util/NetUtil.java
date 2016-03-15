@@ -5,7 +5,6 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
 /**
- * �жϵ�ǰ�ֻ�����������
  * 
  * @author Administrator
  * 
@@ -13,28 +12,23 @@ import android.net.NetworkInfo;
 public class NetUtil
 {
 	/**
-	 * ��鵱ǰ�ֻ�����
+
 	 * 
 	 * @param context
 	 * @return
 	 */
 	public static boolean checkNet(Context context)
 	{
-		// �ж����ӷ�ʽ
 		boolean wifiConnected = isWIFIConnected(context);
 		boolean mobileConnected = isMOBILEConnected(context);
 		if (wifiConnected == false && mobileConnected == false)
 		{
-			// �����û�����ӷ���false����ʾ�û���ǰû������
 			return false;
 		}
 		return true;
 	}
 
-	// �ж��ֻ�ʹ����wifi����mobile
-	/**
-	 * �ж��ֻ��Ƿ����wifi����
-	 */
+
 	public static boolean isWIFIConnected(Context context)
 	{
 		// Context.CONNECTIVITY_SERVICE).
