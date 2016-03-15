@@ -22,7 +22,7 @@ import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 import com.zhy.bean.News;
 
-
+//内容页面
 public class NewContentAdapter extends BaseAdapter
 {
 	private LayoutInflater mInflater;
@@ -130,6 +130,7 @@ public class NewContentAdapter extends BaseAdapter
 			case News.NewsType.IMG:
 				convertView = mInflater.inflate(com.nbgc.csdnnews.R.layout.news_content_img_item, null);
 				holder.mImageView = (ImageView) convertView.findViewById(com.nbgc.csdnnews.R.id.imageView);
+//				holder.mImageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
 				break;
 			case News.NewsType.BOLD_TITLE:
 				convertView = mInflater.inflate(com.nbgc.csdnnews.R.layout.news_content_bold_title_item, null);

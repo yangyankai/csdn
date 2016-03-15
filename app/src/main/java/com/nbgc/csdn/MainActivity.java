@@ -15,7 +15,7 @@ import com.nbgc.csdnnews.R;
 import com.viewpagerindicator.TabPageIndicator;
 
 import cn.sharesdk.framework.ShareSDK;
-
+//主界面，消息界面
 public class MainActivity extends BaseFragmentActivity {
     private TabPageIndicator mIndicator;
     private ViewPager mViewPager;

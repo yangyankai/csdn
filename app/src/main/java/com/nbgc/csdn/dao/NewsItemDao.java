@@ -10,9 +10,9 @@ import android.database.sqlite.SQLiteDatabase;
 import com.nbgc.csdn.util.Logger;
 import com.zhy.bean.NewsItem;
 
+// 缓存到本地
 public class NewsItemDao
 {
-
 	private DBHelper dbHelper;
 
 	public NewsItemDao(Context context)

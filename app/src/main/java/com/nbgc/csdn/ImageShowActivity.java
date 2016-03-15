@@ -10,7 +10,7 @@ import android.widget.Toast;
 import com.nbgc.csdn.util.FileUtil;
 import com.nbgc.csdn.util.Http;
 import com.polites.android.GestureImageView;
-
+//图片放大界面
 public class ImageShowActivity extends BaseActivity
 {
 

@@ -18,7 +18,7 @@ import com.nostra13.universalimageloader.core.display.FadeInBitmapDisplayer;
 import com.nostra13.universalimageloader.core.display.RoundedBitmapDisplayer;
 import com.zhy.bean.NewsItem;
 import com.zhy.csdn.DataUtil;
-
+//条目
 public class NewsItemAdapter extends BaseAdapter
 {
 

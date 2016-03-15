@@ -146,7 +146,6 @@ public class NewsContentActivity extends BaseActivity implements IXListViewLoadM
 		finish();
 	}
 
-
 	/**
 	 * 演示调用ShareSDK执行分享
 	 *
@@ -193,56 +192,7 @@ public class NewsContentActivity extends BaseActivity implements IXListViewLoadM
 		};
 		oks.setCustomerLogo(logo, label, listener);
 
-		// 为EditPage设置一个背景的View
-		//oks.setEditPageBackground(getPage());
-		// 隐藏九宫格中的新浪微博
-		// oks.addHiddenPlatform(SinaWeibo.NAME);
-
-		// String[] AVATARS = {
-		// 		"http://99touxiang.com/public/upload/nvsheng/125/27-011820_433.jpg",
-		// 		"http://img1.2345.com/duoteimg/qqTxImg/2012/04/09/13339485237265.jpg",
-		// 		"http://diy.qqjay.com/u/files/2012/0523/f466c38e1c6c99ee2d6cd7746207a97a.jpg",
-		// 		"http://diy.qqjay.com/u2/2013/0422/fadc08459b1ef5fc1ea6b5b8d22e44b4.jpg",
-		// 		"http://img1.2345.com/duoteimg/qqTxImg/2012/04/09/13339510584349.jpg",
-		// 		"http://diy.qqjay.com/u2/2013/0401/4355c29b30d295b26da6f242a65bcaad.jpg" };
-		// oks.setImageArray(AVATARS);              //腾讯微博和twitter用此方法分享多张图片，其他平台不可以
-
 		// 启动分享
 		oks.show(context);
 	}
-
-
-	public static String[] randomPic() {
-		String url = "http://git.oschina.net/alexyu.yxj/MyTmpFiles/raw/master/kmk_pic_fld/";
-		String urlSmall = "http://git.oschina.net/alexyu.yxj/MyTmpFiles/raw/master/kmk_pic_fld/small/";
-		String[] pics = new String[] {
-				"120.JPG",
-				"127.JPG",
-				"130.JPG",
-				"18.JPG",
-				"184.JPG",
-				"22.JPG",
-				"236.JPG",
-				"237.JPG",
-				"254.JPG",
-				"255.JPG",
-				"263.JPG",
-				"265.JPG",
-				"273.JPG",
-				"37.JPG",
-				"39.JPG",
-				"IMG_2219.JPG",
-				"IMG_2270.JPG",
-				"IMG_2271.JPG",
-				"IMG_2275.JPG",
-				"107.JPG"
-		};
-		int index = (int) (System.currentTimeMillis() % pics.length);
-		return new String[] {
-				url + pics[index],
-				urlSmall + pics[index]
-		};
-	}
-
-
 }

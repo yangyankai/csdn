@@ -29,6 +29,7 @@ import com.zhy.bean.NewsItem;
 import com.zhy.biz.NewsItemBiz;
 import com.zhy.csdn.Constaint;
 
+//加载条目项
 @SuppressLint("ValidFragment")
 public class MainFragment extends Fragment implements IXListViewRefreshListener, IXListViewLoadMore
 {

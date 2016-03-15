@@ -4,6 +4,7 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+//建数据库和建立表
 public class DBHelper extends SQLiteOpenHelper
 {
 	private static final String DB_NAME = "csdn_app_demo";
