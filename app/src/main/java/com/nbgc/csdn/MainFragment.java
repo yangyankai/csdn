@@ -160,7 +160,7 @@ public class MainFragment extends Fragment implements IXListViewRefreshListener,
 	/**
 	 * 记载数据的异步任务
 	 *
-	 * @author zhy
+	 * @author
 	 *
 	 */
 	class LoadDatasTask extends AsyncTask<Integer, Void, Integer>
@@ -207,7 +207,7 @@ public class MainFragment extends Fragment implements IXListViewRefreshListener,
 	}
 
 	/**
-	 * 下拉刷新数据
+	 * 下拉刷新数据：刷新首页数据
 	 */
 	public Integer refreashData()
 	{
