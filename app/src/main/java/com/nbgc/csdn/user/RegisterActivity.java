@@ -23,12 +23,16 @@ import org.apache.http.util.EntityUtils;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ReginActivity extends Activity {
+/**
+ * 注册
+ */
+public class RegisterActivity extends Activity {
 
     private Button btnRegin;//登录
     private EditText editUsername;//用户名
     private EditText editPassword;//密码
     private EditText editEmail;//电子邮件
+    private RegisterActivity _this;
 
     private static String uriAPI;
     private ProgressDialog dialog;
@@ -39,6 +43,7 @@ public class ReginActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_regin);
+        _this = this;
 
         initView();
         setClick();
@@ -69,32 +74,42 @@ public class ReginActivity extends Activity {
         @Override
         public void run() {
             try {
-                uriAPI = "http://114.215.101.143:8080/NBTUNews/AddUser";
-                HttpPost httpRequest = new HttpPost(uriAPI);
-                List<NameValuePair> params = new ArrayList<NameValuePair>();
-                params.add(new BasicNameValuePair("username", "" + editUsername.getText()));
-                params.add(new BasicNameValuePair("password", "" + editPassword.getText()));
-                params.add(new BasicNameValuePair("email", "" + editEmail.getText()));
-                httpRequest.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
-                HttpResponse httpResponse = new DefaultHttpClient().execute(httpRequest);
-
-                if (httpResponse.getStatusLine().getStatusCode() == 200) {
-                    strResult = EntityUtils.toString(httpResponse.getEntity());
-                } else {
-                    return;
-                }
-                handler.post(new Runnable() {
+                runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
+
+                        UserUtil.setUser(_this, editUsername.getText().toString(), editPassword.getText().toString());
                         dialog.cancel();
-                        ToastUtil.toast(getApplicationContext(), "" + strResult);
-                        if("success".equals(strResult)){
-                            finish();//调到登录界面
-                        }else{
-                            //登录失败重新登陆
-                        }
+                        ToastUtil.toast(_this, "注册成功!");
                     }
                 });
+
+//                uriAPI = "http://114.215.101.143:8080/NBTUNews/AddUser";
+//                HttpPost httpRequest = new HttpPost(uriAPI);
+//                List<NameValuePair> params = new ArrayList<NameValuePair>();
+//                params.add(new BasicNameValuePair("username", "" + editUsername.getText()));
+//                params.add(new BasicNameValuePair("password", "" + editPassword.getText()));
+//                params.add(new BasicNameValuePair("email", "" + editEmail.getText()));
+//                httpRequest.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
+//                HttpResponse httpResponse = new DefaultHttpClient().execute(httpRequest);
+//
+//                if (httpResponse.getStatusLine().getStatusCode() == 200) {
+//                    strResult = EntityUtils.toString(httpResponse.getEntity());
+//                } else {
+//                    return;
+//                }
+//                handler.post(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        dialog.cancel();
+//                        ToastUtil.toast(getApplicationContext(), "" + strResult);
+//                        if("success".equals(strResult)){
+//                            finish();//调到登录界面
+//                        }else{
+//
+//                        }
+//                    }
+//                });
             } catch (Exception e) {
                 e.printStackTrace();
             }

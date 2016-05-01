@@ -65,26 +65,19 @@
       <sourceFolder url="file://$MODULE_DIR$/src/androidTest/jni" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTest/rs" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/assets" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/bundles" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/classes" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/coverage-instrumented-classes" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/debug" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/dependency-cache" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/dex" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/dex-cache" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/jacoco" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/javaResources" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/libs" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/lint" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/manifests" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/ndk" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/pre-dexed" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/proguard" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/res" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/rs" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/symbols" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/tmp" />
       <excludeFolder url="file://$MODULE_DIR$/build/outputs" />
       <excludeFolder url="file://$MODULE_DIR$/build/tmp" />
     </content>
@@ -98,24 +91,24 @@
     <orderEntry type="library" exported="" name="ShareSDK-Alipay-2.7.0" level="project" />
     <orderEntry type="library" exported="" name="MobTools-2016.0301.1053" level="project" />
     <orderEntry type="library" exported="" name="ShareSDK-Dropbox-2.7.0" level="project" />
-    <orderEntry type="library" exported="" name="ShareSDK-Pinterest-2.7.0" level="project" />
     <orderEntry type="library" exported="" name="ShareSDK-Douban-2.7.0" level="project" />
-    <orderEntry type="library" exported="" name="ShareSDK-QZone-2.7.0" level="project" />
-    <orderEntry type="library" exported="" name="ShareSDK-TencentWeibo-2.7.0" level="project" />
+    <orderEntry type="library" exported="" name="ShareSDK-Pinterest-2.7.0" level="project" />
     <orderEntry type="library" exported="" name="MobCommons-2016.0301.1053" level="project" />
+    <orderEntry type="library" exported="" name="ShareSDK-TencentWeibo-2.7.0" level="project" />
+    <orderEntry type="library" exported="" name="ShareSDK-QZone-2.7.0" level="project" />
     <orderEntry type="library" exported="" name="ShareSDK-Tumblr-2.7.0" level="project" />
     <orderEntry type="library" exported="" name="ShareSDK-Linkedin-2.7.0" level="project" />
     <orderEntry type="library" exported="" name="ShareSDK-Instagram-2.7.0" level="project" />
-    <orderEntry type="library" exported="" name="ShareSDK-Foursquare-2.7.0" level="project" />
     <orderEntry type="library" exported="" name="ShareSDK-Instapaper-2.7.0" level="project" />
+    <orderEntry type="library" exported="" name="ShareSDK-Foursquare-2.7.0" level="project" />
     <orderEntry type="library" exported="" name="support-v4-21.0.3" level="project" />
     <orderEntry type="library" exported="" name="ShareSDK-QQ-2.7.0" level="project" />
     <orderEntry type="library" exported="" name="ShareSDK-SohuSuishenkan-2.7.0" level="project" />
     <orderEntry type="library" exported="" name="ShareSDK-YouDao-2.7.0" level="project" />
     <orderEntry type="library" exported="" name="ShareSDK-WhatsApp-2.7.0" level="project" />
     <orderEntry type="library" exported="" name="ShareSDK-Mingdao-2.7.0" level="project" />
-    <orderEntry type="library" exported="" name="csdn_splider" level="project" />
     <orderEntry type="library" exported="" name="ShareSDK-Facebook-2.7.0" level="project" />
+    <orderEntry type="library" exported="" name="csdn_splider" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-21.0.3" level="project" />
     <orderEntry type="library" exported="" name="ShareSDK-ShortMessage-2.7.0" level="project" />
     <orderEntry type="library" exported="" name="ShareSDK-Yixin-2.7.0" level="project" />
@@ -136,13 +129,12 @@
     <orderEntry type="library" exported="" name="ShareSDK-KakaoStory-2.7.0" level="project" />
     <orderEntry type="library" exported="" name="ShareSDK-Flickr-2.7.0" level="project" />
     <orderEntry type="library" exported="" name="ShareSDK-Wechat-Favorite-2.7.0" level="project" />
-    <orderEntry type="library" exported="" name="ShareSDK-Wechat-Moments-2.7.0" level="project" />
     <orderEntry type="library" exported="" name="ShareSDK-Core-2.7.0" level="project" />
+    <orderEntry type="library" exported="" name="ShareSDK-Wechat-Moments-2.7.0" level="project" />
     <orderEntry type="library" exported="" name="ShareSDK-Line-2.7.0" level="project" />
     <orderEntry type="module" module-name="viewPagerlibrary" exported="" />
     <orderEntry type="module" module-name="xListViewlibrary" exported="" />
     <orderEntry type="module" module-name="imageloadlibrary" exported="" />
     <orderEntry type="module" module-name="gestureimageview" exported="" />
-    <orderEntry type="library" exported="" name="android-android-21" level="project" />
   </component>
 </module>

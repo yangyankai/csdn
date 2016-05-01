@@ -113,7 +113,7 @@
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
         <activity android:name="com.nbgc.csdn.user.LoginActivity" />
-        <activity android:name="com.nbgc.csdn.user.ReginActivity" />
+        <activity android:name="com.nbgc.csdn.user.RegisterActivity" />
         <!-- 测试 -->
         <activity
             android:name="cn.sharesdk.share.demo.MainActivity"

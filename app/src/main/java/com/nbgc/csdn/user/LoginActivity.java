@@ -24,6 +24,10 @@ import org.apache.http.util.EntityUtils;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 登录界面
+ */
+
 public class LoginActivity extends BaseActivity {
 
     private Button btnLogin;//登录
@@ -34,11 +38,13 @@ public class LoginActivity extends BaseActivity {
     private ProgressDialog dialog;
     private String strResult;//返回结果
     private static Handler handler = new Handler();
+    private LoginActivity _this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        _this = this;
 
         initView();
         setClick();
@@ -59,7 +65,7 @@ public class LoginActivity extends BaseActivity {
         btnRegin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), ReginActivity.class);
+                Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
                 startActivity(intent);
 
             }
@@ -78,31 +84,44 @@ public class LoginActivity extends BaseActivity {
         @Override
         public void run() {
             try {
-                uriAPI = "http://114.215.101.143:8080/NBTUNews/FindUser";
-                HttpPost httpRequest = new HttpPost(uriAPI);
-                List<NameValuePair> params = new ArrayList<NameValuePair>();
-                params.add(new BasicNameValuePair("username", "" + editUsername.getText()));
-                params.add(new BasicNameValuePair("password", "" + editPassword.getText()));
-                httpRequest.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
-                HttpResponse httpResponse = new DefaultHttpClient().execute(httpRequest);
-
-                if (httpResponse.getStatusLine().getStatusCode() == 200) {
-                    strResult = EntityUtils.toString(httpResponse.getEntity());
-                }
-
-                handler.post(new Runnable() {
+                runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
                         dialog.cancel();
-                        ToastUtil.toast(getApplicationContext(), "" + strResult);
-                        if ("success".equals(strResult)) {
-                            finish();//调到主界面
-                            UserUtil.setUser(getApplicationContext(), "" + editUsername.getText(), "" + editPassword.getText());
+                        if (UserUtil.login(_this, editUsername.getText().toString(), editPassword.getText().toString())) {
+                            ToastUtil.toast(_this, "登录成功!");
                         } else {
-                            //登录失败重新登陆
+                            ToastUtil.toast(_this, "登陆失败");
                         }
                     }
                 });
+
+
+//                uriAPI = "http://114.215.101.143:8080/NBTUNews/FindUser";
+//                HttpPost httpRequest = new HttpPost(uriAPI);
+//                List<NameValuePair> params = new ArrayList<NameValuePair>();
+//                params.add(new BasicNameValuePair("username", "" + editUsername.getText()));
+//                params.add(new BasicNameValuePair("password", "" + editPassword.getText()));
+//                httpRequest.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
+//                HttpResponse httpResponse = new DefaultHttpClient().execute(httpRequest);
+//
+//                if (httpResponse.getStatusLine().getStatusCode() == 200) {
+//                    strResult = EntityUtils.toString(httpResponse.getEntity());
+//                }
+//
+//                handler.post(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        dialog.cancel();
+//                        ToastUtil.toast(getApplicationContext(), "" + strResult);
+//                        if ("success".equals(strResult)) {
+//                            finish();//调到主界面
+//                            UserUtil.setUser(getApplicationContext(), "" + editUsername.getText(), "" + editPassword.getText());
+//                        } else {
+//                            //登录失败重新登陆
+//                        }
+//                    }
+//                });
             } catch (Exception e) {
                 e.printStackTrace();
             }
