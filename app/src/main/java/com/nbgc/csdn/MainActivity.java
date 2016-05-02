@@ -9,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.nbgc.csdn.user.LoginActivity;
+import com.nbgc.csdn.user.MyCenterActivity;
+import com.nbgc.csdn.user.SuggestActivity;
 import com.nbgc.csdn.user.UserUtil;
 import com.nbgc.csdn.util.ToastUtil;
 import com.nbgc.csdnnews.R;
@@ -40,10 +42,8 @@ public class MainActivity extends BaseFragmentActivity {
         imageExit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                UserUtil.exit(getApplicationContext());
-                ToastUtil.toast(getApplicationContext(), "已经退出");
-                checkIsLogin();
-                setUsername();
+                Intent intent = new Intent(_this, MyCenterActivity.class);
+                startActivity(intent);
             }
         });
 

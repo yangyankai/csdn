@@ -127,4 +127,8 @@ public class LoginActivity extends BaseActivity {
             }
         }
     }
+
+    public void back(View v) {
+        finish();
+    }
 }

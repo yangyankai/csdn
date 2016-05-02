@@ -39,6 +39,8 @@
         </activity>
         <activity android:name="com.nbgc.csdn.ImageShowActivity" />
         <activity android:name="com.nbgc.csdn.NewsContentActivity" />
+        <activity android:name="com.nbgc.csdn.user.SuggestActivity" />
+        <activity android:name="com.nbgc.csdn.user.MyCenterActivity" />
 
         <activity
             android:name="com.mob.tools.MobUIShell"

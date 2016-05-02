@@ -116,4 +116,9 @@ public class RegisterActivity extends Activity {
 
         }
     }
+
+
+    public void back(View v) {
+        finish();
+    }
 }
