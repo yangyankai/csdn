@@ -11,6 +11,6 @@ public class BaseActivity extends Activity{
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.e("yyk", "" + getLocalClassName());
+        Log.e("getActivity", "" + getLocalClassName());
     }
 }

@@ -54,4 +54,5 @@ dependencies {
     compile project(':imageloadlibrary')
     compile project(':gestureimageview')
     compile files('libs/MobTools-2016.0301.1053.jar')
+    compile files('libs/volly-1.0.11.jar')
 }

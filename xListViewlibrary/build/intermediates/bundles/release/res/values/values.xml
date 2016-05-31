@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- From: file:/C:/csdn/xListViewlibrary/src/main/res/values/strings.xml -->
+    <!-- From: file:/C:/Users/ykai/Desktop/csdn/xListViewlibrary/src/main/res/values/strings.xml -->
     <eat-comment/>
-    <string name="app_name">XListView</string>
+    <string name="app_name">今日科技</string>
     <string name="hello">Hello World, XListViewActivity!</string>
     <string name="xlistview_footer_hint_normal">查看更多</string>
     <string name="xlistview_footer_hint_ready">松开载入更多</string>

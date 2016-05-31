@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.nbgc.csdn.BaseActivity;
+import com.nbgc.csdn.http.PersonLoader;
 import com.nbgc.csdn.util.ToastUtil;
 import com.nbgc.csdnnews.R;
 
@@ -95,8 +96,21 @@ public class LoginActivity extends BaseActivity {
                         }
                     }
                 });
+//Vollery实现-------------------------
+//                PersonLoader personLoader = new PersonLoader(_this);
+//                personLoader.getPerson(new PersonLoader.GetListener() {
+//                    @Override
+//                    public void getSuccess(String strPerson) {
+//
+//                    }
+//                }, new PersonLoader.SfErrorListener() {
+//                    @Override
+//                    public void GetErrorMsg(String msg) {
+//
+//                    }
+//                });
 
-
+//Http Client 实现-------------
 //                uriAPI = "http://114.215.101.143:8080/NBTUNews/FindUser";
 //                HttpPost httpRequest = new HttpPost(uriAPI);
 //                List<NameValuePair> params = new ArrayList<NameValuePair>();

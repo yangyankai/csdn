@@ -84,6 +84,7 @@
     <orderEntry type="jdk" jdkName="Android API 21 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="ShareSDK-Yixin-Core-2.7.0" level="project" />
+    <orderEntry type="library" exported="" name="volly-1.0.11" level="project" />
     <orderEntry type="library" exported="" name="ShareSDK-Evernote-2.7.0" level="project" />
     <orderEntry type="library" exported="" name="ShareSDK-Kakao-Core-2.7.0" level="project" />
     <orderEntry type="library" exported="" name="ShareSDK-VKontakte-2.7.0" level="project" />

@@ -2,7 +2,7 @@
 <resources>
 
     <string name="hello">Hello World, XListViewActivity!</string>
-    <string name="app_name">XListView</string>
+    <string name="app_name">今日科技</string>
     <string name="xlistview_header_hint_normal">下拉刷新</string>
     <string name="xlistview_header_hint_ready">松开刷新数据</string>
     <string name="xlistview_header_hint_loading">正在加载...</string>
